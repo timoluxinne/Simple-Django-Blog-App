@@ -2,13 +2,16 @@
 {% block content %}
 {% for post in posts %}
   
-    <div class="shadow p-2 mb-2">
-        <span><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></span>
-        <span class="ml-3 small text-muted">{{post.date_posted}}</span>
-        <hr class="my-2">
-        <div>
-            <h3><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h3>
-            <p>{{post.content}}</p>
+    <div class="shadow p-2 mb-2 d-flex">
+        <img src="{{post.author.profile.image.url}}" alt="" width='64px' height="64px" class="rounded-circle">
+        <div class="ml-3">
+            <span><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></span>
+            <span class="ml-3 small text-muted">{{post.date_posted}}</span>
+            <hr class="my-2">
+            <div>
+                <h3><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h3>
+                <p>{{post.content}}</p>
+            </div>
         </div>
     </div>
 {% endfor %}

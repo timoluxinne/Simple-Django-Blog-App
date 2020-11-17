@@ -1,6 +1,10 @@
 body{
     background: lightseagreen;
 }
+.container{
+    padding: 0 8%;
+}
+
 .shadow{
     background: honeydew;
     border-radius: 5px;
