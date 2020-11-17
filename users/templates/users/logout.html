@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="shadow p-2">
+        <h3>You have logged out successfully!</h3>
+      <small class="text-muted">
+        Back to Login? <a href="{% url 'login' %}" class="btn btn-sm btn-outline-info">Login</a>
+      </small>
+  </div>
+{% endblock content %}
