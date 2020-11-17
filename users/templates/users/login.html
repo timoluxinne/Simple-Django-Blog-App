@@ -18,6 +18,11 @@
               <legend class="border-bottom text-center font-weight-bold">Login</legend>
               {{form|crispy}}
               <button class="btn btn-block btn-info mb-2">Login</button>
+              <div class="text-center">
+                <a href="{% url 'password_reset' %}" class="small">
+                  Forgot password?
+                </a>
+              </div>
           </fieldset>
       </form>
       <small class="text-muted">
