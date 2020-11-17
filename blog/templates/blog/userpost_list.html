@@ -1,9 +1,11 @@
 {% extends "main.html" %}
 {% block content %}
+<h2>Posts by: {{view.kwargs.username}}</h2>
+
 {% for post in posts %}
   
     <div class="shadow p-2 mb-2">
-        <span><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></span>
+        <span><a href="">{{post.author}}</a></span>
         <span class="ml-3 small text-muted">{{post.date_posted}}</span>
         <hr class="my-2">
         <div>

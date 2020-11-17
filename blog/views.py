@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Post
 from django.views.generic import (
     ListView,
@@ -7,12 +7,24 @@ from django.views.generic import (
     DeleteView,
     UpdateView
 )
+from django.contrib.auth.models import User
 # Create your views here.
 
 class PostListView(ListView):
     model = Post
     context_object_name = 'posts'
     template_name = 'blog/home.html'
+    ordering = ['-date_posted']
+
+class UserPostListView(ListView):
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'blog/userpost_list.html'
+
+    def get_queryset(self):
+        obj = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=obj).order_by('-date_posted')
+
 
 class PostDetailView(DetailView):
     model = Post
