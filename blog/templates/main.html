@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "main.css" %}">
 </head>
 <body>
     {% include "navbar.html" %}
-    <div class="container">
-        {% block content %}
-        {% endblock content %}
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-lg-7">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div class="col-lg-5">
+                <div class="shadow p-2 text-center">
+                    <h3>Sidebar</h3>
+                    <hr class="my-2">
+                    <input type="text" name="" id="" class="form-control my-1" disabled placeholder="...Comments...">
+                    <input type="text" name="" id="" class="form-control my-1" disabled placeholder="...Comments...">
+                    <input type="text" name="" id="" class="form-control my-1" disabled placeholder="...Comments...">
+                    <input type="text" name="" id="" class="form-control my-1" disabled placeholder="...Comments...">
+                    <button class="btn btn-block btn-info" disabled>Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
