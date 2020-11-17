@@ -4,8 +4,8 @@
         <span><a href="">{{object.author}}</a></span>
         <span class="ml-3 small text-muted">{{object.date_posted}}</span>
         <div>
-            <a href="" class="btn btn-sm btn-info">Update</a>
-            <a href="" class="btn btn-sm btn-danger">Delete</a>
+            <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-info">Update</a>
+            <a href="{% url 'post-delete' post.id %}" class="btn btn-sm btn-danger">Delete</a>
         </div>
         <hr class="my-2">
         <div>
